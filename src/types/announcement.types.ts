@@ -13,4 +13,15 @@ export interface Announcement {
   category: Exclude<Category, "all">;
   tags: string[];
   dateLabel: string;
+  achievements?: Achievement[];
+}
+
+
+/**
+ * Modelo de achievement
+ */
+export interface Achievement {
+  name: string;
+  difficulty: string;
+  potential: string;
 }
