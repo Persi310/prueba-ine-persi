@@ -2,6 +2,9 @@ import type { Announcement } from "@/types/announcement.types";
 import Button from "@/components/react/ui/Button";
 import Badge from "@/components/react/ui/Badge";
 
+import { useState } from "react";
+import AnnouncementModal from "./AnnouncementModal";
+
 /**
  * Función auxiliar que determina la configuración visual para cada categoría de anuncio.
  * 
@@ -56,6 +59,8 @@ function categoryConfig(category: Announcement["category"]) {
 export default function AnnouncementCard({ item, onOpen, }: { item: Announcement; onOpen: () => void; }) {
   const category = categoryConfig(item.category);
 
+  const [open, setOpen] = useState(false);
+
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
       <div className="flex items-start justify-between gap-3">
@@ -81,9 +86,12 @@ export default function AnnouncementCard({ item, onOpen, }: { item: Announcement
       </div>
 
       <div className="mt-4 flex items-center justify-end gap-2">
-        <Button variant="secondary" onClick={onOpen}>Ver detalle</Button>
+        <Button variant="secondary" onClick={() => setOpen(true)}>Ver detalle</Button>
         <Button variant="primary">Acción</Button>
       </div>
+      {open && (
+        <AnnouncementModal item={item} onClose={() => setOpen(false)}/>
+      )}
     </article>
   );
 }
