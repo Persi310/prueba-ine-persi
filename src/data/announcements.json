@@ -5,7 +5,20 @@
     "summary": "Se habilitan mejoras visuales y componentes reutilizables para el frontend.",
     "category": "comunicados",
     "tags": ["UI", "React", "Accesibilidad"],
-    "dateLabel": "Hoy"
+    "dateLabel": "Hoy",
+    "achievements": [
+      {
+        "name": "Refactorización de componentes UI",
+        "difficulty": "Media",
+        "potential": "Alta"
+      },
+      {
+        "name": "Mejora de accesibilidad",
+        "difficulty": "Baja",
+        "potential": "Alta"
+      }
+    ]
+    
   },
   {
     "id": "a-002",
@@ -21,7 +34,19 @@
     "summary": "Se realizará mantenimiento programado. El servicio podría estar intermitente.",
     "category": "general",
     "tags": ["Infra", "Aviso"],
-    "dateLabel": "Esta semana"
+    "dateLabel": "Esta semana",
+    "achievements": [
+      {
+        "name": "Refactorización de componentes UI",
+        "difficulty": "Media",
+        "potential": "Alta"
+      },
+      {
+        "name": "Mejora de accesibilidad",
+        "difficulty": "Baja",
+        "potential": "Alta"
+      }
+    ]
   },
   {
     "id": "a-004",
