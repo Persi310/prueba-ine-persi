@@ -59,7 +59,6 @@ function categoryConfig(category: Announcement["category"]) {
 export default function AnnouncementCard({ item, onOpen, }: { item: Announcement; onOpen: () => void; }) {
   const category = categoryConfig(item.category);
 
-  const [open, setOpen] = useState(false);
 
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -86,12 +85,9 @@ export default function AnnouncementCard({ item, onOpen, }: { item: Announcement
       </div>
 
       <div className="mt-4 flex items-center justify-end gap-2">
-        <Button variant="secondary" onClick={() => setOpen(true)}>Ver detalle</Button>
+        <Button variant="secondary" onClick={onOpen}>Ver detalle</Button>
         <Button variant="primary">Acción</Button>
       </div>
-      {open && (
-        <AnnouncementModal item={item} onClose={() => setOpen(false)}/>
-      )}
     </article>
   );
 }
